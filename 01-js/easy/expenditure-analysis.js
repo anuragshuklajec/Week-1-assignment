@@ -9,7 +9,36 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
-}
+  
+  let result = {}
 
+  for (const transaction of transactions){
+    
+    if (transaction['category'] in result){
+      
+      result[transaction['category']] += transaction['price']
+    }else{
+      
+      result[transaction['category']] = transaction['price']
+    
+      
+    }
+    
+  };
+
+  return result
+  
+  }
+
+
+var result = calculateTotalSpentByCategory([
+  { itemName : "bedsheet" , category : "room" , price : 3000, timestamp  : 1000 },
+{ itemName : "pillow" , category : "room" , price : 2000, timestamp  : 1000 },
+{ itemName : "basin" , category : "washroom" , price : 30000, timestamp  : 1000 },
+{ itemName : "sheet" , category : "room" , price : 20000, timestamp  : 1000 },
+{ itemName : "sofa" , category : "living" , price : 60000, timestamp  : 1000 }])
+
+console.log(result);
+
+// console.log(result);
 module.exports = calculateTotalSpentByCategory;
