@@ -17,6 +17,48 @@
   - `npm run test-calculator`
 */
 
-class Calculator {}
+class Calculator {
+   constructor(result){
+    this.result = result
+   }
+
+   add(x){
+    this.result += x
+    return result
+   }
+
+   subtract(x){
+    this.result -= x
+    return result
+   }
+
+   multiply(x){
+    this.result *= x
+    return result
+   }
+
+   divide(x){
+    this.result /= x
+    return result
+   }
+
+   clear(){
+    this.result = 0 
+    return result
+   }
+
+   calculate(str){
+    return eval(str)
+   }
+
+
+}
+
+var result = new Calculator(0)
+console.log(result.add(1));
+console.log(result.add(5));
+console.log(result.divide(2));
+console.log(result.clear())
+console.log(result.calculate("5+(6*  9)"))
 
 module.exports = Calculator;
