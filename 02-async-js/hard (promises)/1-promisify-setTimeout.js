@@ -3,4 +3,14 @@
 */
 
 function wait(n) {
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+            console.log("Closing");
+            resolve
+        },n*1000)
+    })
+    
 }
+
+wait(2);
+
