@@ -4,5 +4,14 @@
  */
 
 function sleep (seconds) {
+    return new Promise((resolve) =>{
+        setTimeout(()=>{
+            console.log(`closing after ${seconds} seconds`);
+            resolve
+        },seconds*1000)
+
+    })
 
 }
+
+sleep(5)
