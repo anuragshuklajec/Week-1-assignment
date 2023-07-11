@@ -6,17 +6,30 @@
 
 
 function waitOneSecond() {
+    return new Promise((resolve)=>{
+        setTimeout(resolve,1000)
+    })
 
 }
 
 function waitTwoSecond() {
-
+    return new Promise((resolve)=>{
+        setTimeout(resolve,2000)
+    })
 }
 
 function waitThreeSecond() {
-
+    return new Promise((resolve)=>{
+        setTimeout(resolve,7000)
+    })
 }
 
 function calculateTime() {
-
+    let startTime = Date.now()
+    Promise.all([waitOneSecond(),waitTwoSecond(),waitThreeSecond()]).then(()=>{
+        let endTime = Date.now()
+        console.log(`All promises resolved in ${(endTime-startTime)/1000} seconds`)
+    })
 }
+
+calculateTime()
